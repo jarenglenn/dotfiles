@@ -1,0 +1,6 @@
+
+configuration {
+	modi: "drun,window";
+	show-icons: true;
+	font: "SauceCodePro Nerd Font 20";
+}

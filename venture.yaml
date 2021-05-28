@@ -1,0 +1,12 @@
+directories:
+- base: /home/jaren/development
+  subs:
+  - work
+exec: code -r {path}
+quicklaunch: {}
+rofi: {theme: "~/.config/rofi/venture.rasi"}
+show_files: true
+show_hidden: false
+show_icons: true
+ui_provider: rofi
+use_cache: false

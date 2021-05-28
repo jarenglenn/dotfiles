@@ -1,0 +1,56 @@
+* {
+	backgroundc: #1d1f28;
+	highlight: #4c7899;
+	text: #333;
+}
+
+
+window {
+  background-color: @backgroundc;
+  border-radius: 10px;
+  border: 3;
+  width: 1000px;
+  height: 600px;
+  text-color: var(text);
+}
+
+mainbox {
+	background-color: inherit;	
+}
+
+listview {
+	background-color: inherit;	
+}
+
+element {
+	color: white;
+	background-color: var(backgroundc);	
+	padding: 10px;
+	orientation: horizontal;
+}
+
+element-icon {
+	size: 35px;
+}
+
+element.selected {
+	background-color: var(highlight);
+}
+
+inputbar {
+  spacing: 0px;
+  border: 0;
+  text-color: var(normal-foreground);
+  children: [ entry ];
+  border-radis: 10;
+  background-color: var(backgroundc);
+}
+
+entry {
+	background-color: white;
+	border: 0;
+	border-color: white;
+	padding: 5 10;
+	border-radius: 10 10 0 0;
+	text-color: #333;
+}
