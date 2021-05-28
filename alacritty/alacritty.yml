@@ -1,32 +1,28 @@
 background_opacity: 0.925
 colors:
-  # Default colors
+  name: Monokai (dark)
+  author: Chris Kempson
   primary:
-    background: '#000000'
-    foreground: '#ffffff'
-
+    background: "#000000"
+    foreground: "#f8f8f2"
   cursor:
-    text: '#ffffff'
-    cursor: '#ffffff'
-
-  # Normal colors
+    text: "#272822"
+    cursor: "#f8f8f2"
   normal:
-    black: '#4e4e4e'
-    red: '#ff6c60'
-    green: '#a8ff60'
-    yellow: '#ffffb6'
-    blue: '#96cbfe'
-    magenta: '#ff73fd'
-    cyan: '#c6c5fe'
-    white: '#eeeeee'
-
-  # Bright colors
+    black: "#272822"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f8f8f2"
   bright:
-    black: '#7c7c7c'
-    red: '#ffb6b0'
-    green: '#ceffab'
-    yellow: '#ffffcb'
-    blue: '#b5dcfe'
-    magenta: '#ff9cfe'
-    cyan: '#dfdffe'
-    white: '#ffffff'
+    black: "#75715e"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f9f8f5"

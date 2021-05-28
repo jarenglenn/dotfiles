@@ -1,10 +1,17 @@
 directories:
 - base: /home/jaren/development
   subs:
-  - work
+  - work/
+  - personal/*
 exec: code -r {path}
-quicklaunch: {}
-rofi: {theme: "~/.config/rofi/venture.rasi"}
+include_parent_folder: false
+quicklaunch:
+  piserver:
+    icon: "\uF192"
+    path: ~/development/work/piserver/
+    tags: [python, react]
+rofi:
+  theme: ~/.config/rofi/venture.rasi
 show_files: true
 show_hidden: false
 show_icons: true
