@@ -2,8 +2,8 @@
 
 window {
 	location: west;
-	height: 100%;
 	width: 20%;
+	height: 100%;
 	border-radius: 0px;
 }
 

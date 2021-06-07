@@ -26,3 +26,16 @@ colors:
     magenta: "#ae81ff"
     cyan: "#a1efe4"
     white: "#f9f8f5"
+font:
+  size: 12
+  normal:
+    family: SF Mono Powerline
+    style: Regular
+  bold:
+    family: SF Mono Powerline
+    style: Bold
+  italic:
+    family: SF Mono Powerline
+    style: Bold Italic
+
+  

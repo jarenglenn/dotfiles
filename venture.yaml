@@ -1,19 +1,39 @@
-directories:
-- base: /home/jaren/development
-  subs:
-  - work/
-  - personal/*
-exec: code -r {path}
-include_parent_folder: false
-quicklaunch:
-  piserver:
-    icon: "\uF192"
-    path: ~/development/work/piserver/
-    tags: [python, react]
-rofi:
+args:
   theme: ~/.config/rofi/venture.rasi
-show_files: true
-show_hidden: false
-show_icons: true
-ui_provider: rofi
-use_cache: false
+  
+ui: rofi
+exec: code -r {path} && i3-msg [class=Code] focus
+
+color_icons: true
+
+browse:
+  entries:
+  - base: /home/jaren/development
+    subs:
+    - work/
+    - personal/*
+  exec: ''
+  include_parent_folder: false
+  show_files: true
+  show_hidden: false
+  show_icons: true
+  show_quicklaunch: true
+  use_cache: false
+
+quicklaunch:
+  entries:
+    piserver:
+      icon: "\uF81F"
+      path: ~/development/work/piserver/
+      tags:
+      - "|py|"
+      - "|jsx|"
+    specialforms:
+      icon: "\uE23E"
+      path: ~/development/work/specialforms/
+      tags:
+      - "|rb|"
+      - "|jsx|"
+  exec: ''
+  show_filepath: false
+
