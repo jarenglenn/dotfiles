@@ -413,6 +413,7 @@
 #
 # vim: ft=cfg
 
-[discord-focus]
-	desktop_entry = discord
-	script = ~/.config/dunst/scripts/discord-focus.sh
+[discord-urgent]
+	appname = discord
+	summary = *
+	script = ~/.config/dunst/scripts/urgent-notification.sh

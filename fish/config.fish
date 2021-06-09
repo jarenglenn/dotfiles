@@ -21,3 +21,7 @@ function be
     set toExec ruby $argv -p 5000
     bundle exec $toExec
 end
+
+function activate
+    source ./.venv/bin/activate.fish
+end

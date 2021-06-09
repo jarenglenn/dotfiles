@@ -60,10 +60,10 @@ function fish_prompt
             end
 
         else if git_is_dirty
-            set git_color white red
+            set git_color black red
 
         else if git_is_touched
-            set git_color white red
+            set git_color black red
         end
 
         if git_is_detached_head
@@ -107,14 +107,14 @@ function fish_prompt
     end
 
     if test "$status_copy" -ne 0
-        segment red white (set_color -o)" ! "(set_color normal)
+        segment black red (set_color -o)" ! "(set_color normal)
 
     else if last_job_id > /dev/null
         segment white 333 " %% "
     end
 
     if [ "$theme_display_virtualenv" != 'no' ]; and set -q VIRTUAL_ENV
-        segment yellow blue " "(basename "$VIRTUAL_ENV")" "
+        segment black blue " "(basename "$VIRTUAL_ENV")" "
     end
 
     if [ "$theme_display_ruby" != 'no' ]; and set -q RUBY_VERSION
@@ -124,11 +124,11 @@ function fish_prompt
     if test "$fish_key_bindings" = "fish_vi_key_bindings"
       switch $fish_bind_mode
         case default
-          segment white red "[N]"
+          segment black red "[N]"
         case insert
           segment black green "[I]"
         case replace-one
-          segment yellow blue "[R]"
+          segment black blue "[R]"
         case visual
           segment white magenta "[V]"
       end
