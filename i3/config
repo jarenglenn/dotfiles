@@ -16,7 +16,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id nm-applet
 
 # Start the compositor
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom -b
 
 # Star the authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -111,7 +111,7 @@ client.placeholder          #282A36        #282A36        #F8F8F2   #282A36     
 
 
 # Set inner/outer gaps
-gaps inner 12
+gaps inner 18
 gaps outer 0
 
 hide_edge_borders smart_no_gaps

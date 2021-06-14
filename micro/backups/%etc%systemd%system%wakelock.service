@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock the screen
+Before=suspend.target
+
+[Service]
+User=%i
+Type=forking
+Environment=DISPLAY=":0"
+ExecStart=~/.config/i3/scripts/blur-lock.sh
+
+[Install]
+WantedBy=suspend.target
