@@ -1,23 +1,20 @@
 args:
   theme: ~/.config/rofi/venture.rasi
-color_icons: true
-exec: code -r {path} && i3-msg [class=Code] focus
-ui: rofi
-
 browse:
   entries:
   - base: /home/jaren/development
     subs:
-    - work/
+    - work
     - personal/*
   exec: ''
+  include_parent_folder: false
   show_files: true
   show_hidden: false
   show_icons: true
   show_quicklaunch: true
   use_cache: false
-  include_parent_folder: false
-  
+color_icons: true
+exec: code -r {path} && i3-msg [class=Code] focus
 quicklaunch:
   entries:
     ACLI:
@@ -25,18 +22,18 @@ quicklaunch:
       path: ~/development/personal/python/acli/
       tags:
       - '|py|'
-    piserver:
+    Pi Database:
       icon: "\uF81F"
       path: ~/development/work/piserver/
       tags:
       - '|py|'
       - '|jsx|'
-    specialforms:
+    Special Forms:
       icon: "\uE23E"
       path: ~/development/work/specialforms/
       tags:
-      - '|rb|'
+      - '|py|'
       - '|jsx|'
   exec: ''
-  show_filepath: true
-
+  show_filepath: false
+ui: rofi
