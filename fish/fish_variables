@@ -1,10 +1,16 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:micro
+SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
+SETUVAR FZF_DISABLE_KEYBINDINGS:0
+SETUVAR FZF_LEGACY_KEYBINDINGS:0
+SETUVAR FZF_PREVIEW_DIR_CMD:ls
+SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
+SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR __fish_initialized:3100
-SETUVAR _fisher__2F_home_2F_jaren_2F_fish_2D_prompt_2D_metro_files:/home/jaren/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/home/jaren/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/home/jaren/\x2econfig/fish/functions/fish_right_prompt\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_ahead\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_branch_name\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_detached_head\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_dirty\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_empty\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_repo\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_staged\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_stashed\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_tag\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_is_touched\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_repository_root\x2efish\x1e/home/jaren/\x2econfig/fish/functions/git_untracked_files\x2efish\x1e/home/jaren/\x2econfig/fish/functions/host_info\x2efish\x1e/home/jaren/\x2econfig/fish/functions/humanize_duration\x2efish\x1e/home/jaren/\x2econfig/fish/functions/last_job_id\x2efish\x1e/home/jaren/\x2econfig/fish/functions/pwd_info\x2efish\x1e/home/jaren/\x2econfig/fish/functions/pwd_is_home\x2efish\x1e/home/jaren/\x2econfig/fish/functions/segment\x2efish\x1e/home/jaren/\x2econfig/fish/functions/segment_close\x2efish\x1e/home/jaren/\x2econfig/fish/functions/segment_right\x2efish\x1e/home/jaren/\x2econfig/fish/functions/set_color_custom\x2efish
-SETUVAR _fisher_fishpkg_2F_fish_2D_prompt_2D_metro_files:/home/jaren/\x2econfig/fish/functions/gitio\x2efish\x1e/home/jaren/\x2econfig/fish/completions/gitio\x2efish
+SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/jaren/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/jaren/\x2econfig/fish/conf\x2ed/fzf\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/jaren/\x2econfig/fish/functions/fisher\x2efish\x1e/home/jaren/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1efishpkg/fish\x2dprompt\x2dmetro\x1e/home/jaren/fish\x2dprompt\x2dmetro
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/fzf
 SETUVAR fish_color_autosuggestion:BD93F9
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:8BE9FD

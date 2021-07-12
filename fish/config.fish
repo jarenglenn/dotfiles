@@ -1,4 +1,9 @@
-set PATH /home/jaren/.local/bin /home/jaren/.gem/ruby/3.0.0/bin /home/jaren/.poetry/binm/ $PATH
+set PATH \
+    /home/jaren/.local/bin \
+    /home/jaren/.gem/ruby/3.0.0/bin \
+    /home/jaren/.poetry/binm/ \
+    $PATH
+     
 # Removes fish greeting 
 set fish_greeting
 
@@ -29,3 +34,7 @@ end
 function ccd --wraps "git clone"
     git clone $argv[1] && cd (basename $argv[1] .git)
 end
+
+direnv hook fish | source
+
+starship init fish | source
