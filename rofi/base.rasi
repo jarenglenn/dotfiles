@@ -1,6 +1,6 @@
 * {
-	backgroundc: #1d1f28;
-	highlight: #4c7899;
+	backgroundc: #282a36;
+	highlight: #6272a5;
 	text: #333;
 }
 

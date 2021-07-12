@@ -1,6 +1,7 @@
+/** Basic config file **/
 
 configuration {
-	modi: "drun,window";
-	show-icons: true;
-	font: "SauceCodePro Nerd Font 20";
+  show-icons:         true;
+  icon-theme:         "Papirus";
+  font: "SF Mono 20";
 }
