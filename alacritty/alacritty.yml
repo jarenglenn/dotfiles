@@ -1,9 +1,8 @@
 background_opacity: 0.925
 colors:
-colors:
   primary:
     # background: '0x282a36'
-    background: '0x000000'
+    background: '#000000'
     foreground: '0xf8f8f2'
   cursor:
     text: CellBackground
@@ -57,13 +56,16 @@ colors:
 font:
   size: 12
   normal:
-    family: SF Mono Powerline
+    family: Fira Code
     style: Regular
   bold:
-    family: SF Mono Powerline
+    family: Fira Code
     style: Bold
   italic:
-    family: SF Mono Powerline
+    family: Fira Code
     style: Bold Italic
-
+window:
+  padding: 
+    x: 4
+    y: 4
   

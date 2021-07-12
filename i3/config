@@ -16,7 +16,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id nm-applet
 
 # Start the compositor
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b --experimental-backends --backend glx --xrender-synx-fence
 
 # Star the authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -59,12 +59,14 @@ bindsym Mod1+v exec code
 bindsym Print exec gnome-screenshot -i
 
 # Color Picker
-bindsym $mod+Mod1+c  exec "~/.config/i3/scripts/colorpicker --one-shot --short --preview | xsel -b"
+bindsym $mod+Mod1+c exec --no-startup-id "xcolor | xsel -b"; exec "notify-send help"
 
 # Application Menu
-bindsym $mod+x exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+# bindsym $mod+x exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
+                # -columns 2 -padding 50 -hide-scrollbar \
+                # -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+
+bindsym $mod+x exec ~/.config/rofi/launchers/colorful/launcher.sh
 
 # Window Menu
 bindsym Mod1+Tab exec "rofi -show window -mode window -window-thumbnail -theme /home/jaren/.config/rofi/themes/windows.rasi"
@@ -99,7 +101,7 @@ set $yellowbrown	#e1b700
 # define colors for windows:
 #class                      border         bground        text		indicator	child_border
 client.focused              #6272A4        #6272A4        #F8F8F2   #6272A4     #6272A4
-client.focused_inactive     #44475A        #44475A        #F8F8F2   #44475A     #44475A
+client.focused_inactive     #44475a        #44475A        #F8F8F2   #44475A     #44475A
 client.unfocused            #282A36        #282A36        #BFBFBF   #282A36     #282A36
 client.urgent               #44475A        #FF5555        #F8F8F2   #FF5555     #FF5555
 client.placeholder          #282A36        #282A36        #F8F8F2   #282A36     #282A36
@@ -127,7 +129,7 @@ bindsym $mod+q kill
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec ~/.config/i3/scripts/blur-lock.sh
+bindsym $mod+l exec "multilockscreen -l blur --off 300 --display 1"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -253,6 +255,7 @@ assign [class="Alacritty"] $wst
 assign [class="Microsoft-edge-beta"] $wsb
 assign [class="Code"] $wsp
 assign [class="discord"] $wsd
+assign [class="zoom" $wsd]
 for_window [class="Spotify"] move to workspace $wsm
 
 
