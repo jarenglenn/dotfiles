@@ -35,6 +35,10 @@ function ccd --wraps "git clone"
     git clone $argv[1] && cd (basename $argv[1] .git)
 end
 
+function vim 
+    nvim $argv
+end
+
 direnv hook fish | source
 
 starship init fish | source

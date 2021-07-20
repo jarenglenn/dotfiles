@@ -58,9 +58,6 @@ bindsym Mod1+v exec code
 # Screenshots
 bindsym Print exec gnome-screenshot -i
 
-# Color Picker
-bindsym $mod+Mod1+c exec --no-startup-id "xcolor | xsel -b"; exec "notify-send help"
-
 # Application Menu
 # bindsym $mod+x exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 # -columns 2 -padding 50 -hide-scrollbar \
@@ -83,20 +80,6 @@ bindsym $mod+Shift+a exec ~/.local/bin/venture
 
 #border indicator on windows:
 new_window pixel 1
-
-
-# Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class                      border         bground        text		indicator	child_border
@@ -132,7 +115,7 @@ bindsym $mod+q kill
 bindsym $mod+l exec "multilockscreen -l blur --off 300 --display 1"
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -201,14 +184,14 @@ set $wst "terminal"
 set $wsm "music"
 set $wsd "discord"
 
-set $monitor_left DP-2
-set $monitor_right DP-0
+set $monitor_left DP-4
+set $monitor_right DP-2
 
 workspace $wst output $monitor_left
-workspace $wsp output $monitor_left
+workspace $wsp output $monitor_right
 workspace $wsb output $monitor_right
-workspace $wsm output $monitor_right
-workspace $wsd output $monitor_right
+workspace $wsm output $monitor_left
+workspace $wsd output $monitor_left
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -223,7 +206,7 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+b workspace $wsb
-bindsym $mod+p workspace $wsp
+bindsym $mod+c workspace $wsp
 bindsym $mod+t workspace $wst
 bindsym $mod+m workspace $wsm
 bindsym $mod+d workspace $wsd
@@ -241,7 +224,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+b move container to workspace $wsb
-bindsym $mod+Shift+p move container to workspace $wsp
+bindsym $mod+Shift+c move container to workspace $wsp
 bindsym $mod+Shift+t move container to workspace $wst
 bindsym $mod+Shift+m move container to workspace $wsm
 bindsym $mod+Shift+d move container to workspace $wsd
@@ -255,7 +238,7 @@ assign [class="Alacritty"] $wst
 assign [class="Microsoft-edge-beta"] $wsb
 assign [class="Code"] $wsp
 assign [class="discord"] $wsd
-assign [class="zoom" $wsd]
+assign [class="zoom"] $wsd
 for_window [class="Spotify"] move to workspace $wsm
 
 
@@ -265,7 +248,7 @@ for_window [class="Microsoft-edge-beta"] focus
 for_window [class="Code"] focus
 for_window [class="discord"] focus
 for_window [class="Spotify"] focus
-
+for_window [class="zoom"] focus
 
 
 ###########################################################
@@ -274,24 +257,24 @@ for_window [class="Spotify"] focus
 
 
 # resize window (you can also use the mouse for that):
-mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-	bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
+# mode "resize" {
+        # bindsym j resize shrink width 10 px or 10 ppt
+        # bindsym k resize grow height 10 px or 10 ppt
+        # bindsym l resize shrink height 10 px or 10 ppt
+        # bindsym ntilde resize grow width 10 px or 10 ppt
+# 
+        # # same bindings, but for the arrow keys
+	# bindsym Left resize shrink width 10 px or 10 ppt
+        # bindsym Down resize grow height 10 px or 10 ppt
+        # bindsym Up resize shrink height 10 px or 10 ppt
+        # bindsym Right resize grow width 10 px or 10 ppt
+# 
+        # # back to normal: Enter or Escape
+	# bindsym Return mode "default"
+        # bindsym Escape mode "default"
+# }
+# 
+# bindsym $mod+r mode "resize"
 
 
 #set floating (nontiling) for special apps
