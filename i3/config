@@ -16,7 +16,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id nm-applet
 
 # Start the compositor
-exec --no-startup-id picom -b --experimental-backends --backend glx --xrender-synx-fence
+exec --no-startup-id picom -b --experimental-backends --backend glx --xrender-sync-fence
 
 # Star the authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -31,7 +31,7 @@ exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id nitrogen --restore
 
 #set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id xset s off dpms 600 600 600
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
@@ -112,7 +112,7 @@ bindsym $mod+q kill
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec "multilockscreen -l blur --off 300 --display 1"
+bindsym $mod+";" exec "multilockscreen -l blur --off 300 --display 1"
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -126,11 +126,21 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+l focus right
+
 # Move Windows
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -236,7 +246,7 @@ bindsym $mod+Control+Left move workspace to output left
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $wst
 assign [class="Microsoft-edge-beta"] $wsb
-assign [class="Code"] $wsp
+# assign [class="Code"] $wsp
 assign [class="discord"] $wsd
 assign [class="zoom"] $wsd
 for_window [class="Spotify"] move to workspace $wsm
@@ -273,7 +283,7 @@ for_window [class="zoom"] focus
 	# bindsym Return mode "default"
         # bindsym Escape mode "default"
 # }
-# 
+# #
 # bindsym $mod+r mode "resize"
 
 
