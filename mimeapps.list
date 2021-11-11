@@ -4,3 +4,6 @@ x-scheme-handler/https=microsoft-edge-beta.desktop
 
 [Added Associations]
 application/octet-stream=xed.desktop;
+text/x-c++src=visual-studio-code.desktop;
+text/x-cmake=visual-studio-code.desktop;
+text/plain=visual-studio-code.desktop;

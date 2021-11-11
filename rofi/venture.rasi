@@ -10,3 +10,13 @@ window {
 entry {
 	border-radius: 0px;
 }
+
+element.selected {
+	color: white;
+}
+
+entry {
+	background-color: transparent;
+	border-radius: 0px;
+	color: #fff;
+}

@@ -66,7 +66,7 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+x exec ~/.config/rofi/launchers/colorful/launcher.sh
 
 # Window Menu
-bindsym Mod1+Tab exec "rofi -show window -mode window -window-thumbnail -theme /home/jaren/.config/rofi/themes/windows.rasi"
+# bindsym Mod1+Tab exec "rofi -show window -mode window -window-thumbnail -theme /home/jaren/.config/rofi/themes/windows.rasi"
 
 # Power Menu
 bindsym Control+Mod1+p exec ~/.config/rofi/powermenu/powermenu.sh
@@ -162,6 +162,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# Scroll through worksapces
+bindsym Mod1+Tab workspace back_and_forth
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -194,8 +197,8 @@ set $wst "terminal"
 set $wsm "music"
 set $wsd "discord"
 
-set $monitor_left DP-4
-set $monitor_right DP-2
+set $monitor_left DP-2
+set $monitor_right DP-0
 
 workspace $wst output $monitor_left
 workspace $wsp output $monitor_right

@@ -6,6 +6,7 @@ browse:
     subs:
     - work
     - personal/*
+    - school/*
   exec: ''
   include_parent_folder: false
   show_files: true

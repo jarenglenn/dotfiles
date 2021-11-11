@@ -39,6 +39,10 @@ function vim
     nvim $argv
 end
 
+function prp
+    poetry run python $argv
+end
+
 direnv hook fish | source
 
 starship init fish | source
