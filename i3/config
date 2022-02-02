@@ -36,6 +36,9 @@ exec --no-startup-id xset s off dpms 600 600 600
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
+# Clipboard manager
+exec --no-startup-id greenclip daemon
+
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -73,6 +76,9 @@ bindsym Control+Mod1+p exec ~/.config/rofi/powermenu/powermenu.sh
 
 # Project Menu
 bindsym $mod+Shift+a exec ~/.local/bin/venture
+
+# Clipboard manager
+bindsym $mod+c exec rofi -modi "paste:/home/jaren/.config/rofi/scripts/paste-modi.sh" -show paste
 
 ###########################################################
 ###################### APPEARANCE #########################
@@ -192,7 +198,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 set $wsb "brower"
-set $wsp "programming"
+# set $wsp "programming"
 set $wst "terminal"
 set $wsm "music"
 set $wsd "discord"
@@ -219,7 +225,7 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+b workspace $wsb
-bindsym $mod+c workspace $wsp
+# bindsym $mod+c workspace $wsp
 bindsym $mod+t workspace $wst
 bindsym $mod+m workspace $wsm
 bindsym $mod+d workspace $wsd
@@ -237,7 +243,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+b move container to workspace $wsb
-bindsym $mod+Shift+c move container to workspace $wsp
+# bindsym $mod+Shift+c move container to workspace $wsp
 bindsym $mod+Shift+t move container to workspace $wst
 bindsym $mod+Shift+m move container to workspace $wsm
 bindsym $mod+Shift+d move container to workspace $wsd
