@@ -7,3 +7,4 @@ application/octet-stream=xed.desktop;
 text/x-c++src=visual-studio-code.desktop;
 text/x-cmake=visual-studio-code.desktop;
 text/plain=visual-studio-code.desktop;
+inode/directory=vlc.desktop;
