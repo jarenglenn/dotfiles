@@ -203,8 +203,8 @@ set $wst "terminal"
 set $wsm "music"
 set $wsd "discord"
 
-set $monitor_left DP-2
-set $monitor_right DP-0
+set $monitor_left DP-0
+set $monitor_right DP-2
 
 workspace $wst output $monitor_left
 workspace $wsp output $monitor_right
