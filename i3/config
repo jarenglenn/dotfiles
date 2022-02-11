@@ -75,7 +75,7 @@ bindsym $mod+x exec ~/.config/rofi/launchers/colorful/launcher.sh
 bindsym Control+Mod1+p exec ~/.config/rofi/powermenu/powermenu.sh
 
 # Project Menu
-bindsym $mod+Shift+a exec ~/.local/bin/venture
+bindsym $mod+Shift+a exec /home/jaren/.local/bin/venture run
 
 # Clipboard manager
 bindsym $mod+c exec rofi -modi "paste:/home/jaren/.config/rofi/scripts/paste-modi.sh" -show paste
