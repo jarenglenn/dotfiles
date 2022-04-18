@@ -42,6 +42,7 @@ exec --no-startup-id greenclip daemon
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# i3-layouts
 
 ###########################################################
 ###################### APPLICATIONS #######################
@@ -177,6 +178,9 @@ bindsym $mod+a focus parent
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace.sh
 
+# Resize and center a windor (for single screen on ultrawide)
+bindsym $mod+y floating enable; resize set 2231 px 1366 px; move position 1458 734
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -276,24 +280,24 @@ for_window [class="zoom"] focus
 
 
 # resize window (you can also use the mouse for that):
-# mode "resize" {
-        # bindsym j resize shrink width 10 px or 10 ppt
-        # bindsym k resize grow height 10 px or 10 ppt
-        # bindsym l resize shrink height 10 px or 10 ppt
-        # bindsym ntilde resize grow width 10 px or 10 ppt
-# 
-        # # same bindings, but for the arrow keys
-	# bindsym Left resize shrink width 10 px or 10 ppt
-        # bindsym Down resize grow height 10 px or 10 ppt
-        # bindsym Up resize shrink height 10 px or 10 ppt
-        # bindsym Right resize grow width 10 px or 10 ppt
-# 
-        # # back to normal: Enter or Escape
-	# bindsym Return mode "default"
-        # bindsym Escape mode "default"
-# }
-# #
-# bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym ntilde resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+	bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+#
+bindsym $mod+r mode "resize"
 
 
 #set floating (nontiling) for special apps
