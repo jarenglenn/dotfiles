@@ -86,7 +86,7 @@ abbr -a gop "microsoft-edge-beta (repo-url)"
 # Misc
 alias la="exa -la --icons"
 abbr be "bundle exec"
-abbr prp "poetry run python"
+abbr pr "poetry run"
 
 
 

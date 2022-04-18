@@ -7,7 +7,7 @@ SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_be:bundle\x20exec
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall\x20\x2e
@@ -43,6 +43,7 @@ SETUVAR _fish_abbr_grs:git\x20shortlog\x20\x2ds\x20\x2dn\x20\x2d\x2dall\x20\x2d\
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_gsu:git\x20status\x20\x2duno
 SETUVAR _fish_abbr_gtd:git\x20log\x20\x2d\x2dtags\x20\x2d\x2dsimplify\x2dby\x2ddecoration\x20\x2d\x2dpretty\x3d\x22format\x3a\x25ai\x20\x25d\x22
+SETUVAR _fish_abbr_pr:poetry\x20run
 SETUVAR _fish_abbr_prp:poetry\x20run\x20python
 SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/jaren/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/jaren/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/jaren/\x2econfig/fish/conf\x2ed/fzf\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/jaren/\x2econfig/fish/functions/fisher\x2efish\x1e/home/jaren/\x2econfig/fish/completions/fisher\x2efish
@@ -75,4 +76,5 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/jaren/\x2ervm/bin
