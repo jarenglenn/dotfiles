@@ -1,0 +1,14 @@
+@import "base/base"
+
+* {
+    highlight: @cyan;
+    bold-highlight: @bold-cyan;
+}
+
+listview {
+    lines: 10;
+}
+
+textbox {
+    str: " Files ";
+}

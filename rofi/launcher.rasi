@@ -2,7 +2,7 @@
 
 * {
   highlight: @green;
-  bold-highlight: @bold-breen;
+  bold-highlight: @bold-green;
 }
 
 window {

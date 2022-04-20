@@ -8,7 +8,7 @@ if __name__ == '__main__':
                            capture_output=True).stdout.split('\n')
 
     title = 'files'
-    rofi_command = 'rofi -dmenu -i -p {}'.format(title)
+    rofi_command = 'rofi -dmenu -i -p {} -theme ~/.config/rofi/files.rasi -no-fixed-num-lines'.format(title)
     rofi_input = '\n'.join(file for file in files)
     cp = subprocess.run(rofi_command.split(), input=rofi_input,
                         encoding='utf-8', capture_output=True)
