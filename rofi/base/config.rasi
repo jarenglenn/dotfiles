@@ -1,0 +1,6 @@
+configuration {
+  show-icons: false;
+  font: "Fira Code 15";
+  sidebar-mode: false;
+  yoffset: 435;
+}
