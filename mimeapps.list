@@ -1,6 +1,8 @@
 [Default Applications]
 x-scheme-handler/http=microsoft-edge-beta.desktop
 x-scheme-handler/https=microsoft-edge-beta.desktop
+text/plain=visual-studio-code.desktop
+application/pdf=microsoft-edge-beta.desktop
 
 [Added Associations]
 application/octet-stream=xed.desktop;

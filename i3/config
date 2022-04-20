@@ -40,9 +40,8 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 exec --no-startup-id greenclip daemon
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# i3-layouts
+exec --no-startup-id polybar barleft --config=~/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar.log & disown
+exec --no-startup-id polybar barright --config=~/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar.log & disown
 
 ###########################################################
 ###################### APPLICATIONS #######################
@@ -63,23 +62,22 @@ bindsym Mod1+v exec code
 bindsym Print exec gnome-screenshot -i
 
 # Application Menu
-# bindsym $mod+x exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                # -columns 2 -padding 50 -hide-scrollbar \
-                # -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
-
-bindsym $mod+x exec ~/.config/rofi/launchers/colorful/launcher.sh
-
-# Window Menu
-# bindsym Mod1+Tab exec "rofi -show window -mode window -window-thumbnail -theme /home/jaren/.config/rofi/themes/windows.rasi"
+bindsym $mod+x exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launcher.rasi -drun-display-format {name} -no-fixed-num-lines
 
 # Power Menu
 bindsym Control+Mod1+p exec ~/.config/rofi/powermenu/powermenu.sh
 
 # Project Menu
-bindsym $mod+Shift+a exec /home/jaren/.local/bin/venture run
+bindsym $mod+Shift+a exec ~/.local/bin/venture run
 
 # Clipboard manager
-bindsym $mod+c exec rofi -modi "paste:/home/jaren/.config/rofi/scripts/paste-modi.sh" -show paste
+bindsym $mod+c exec --no-startup-id rofi -modi "paste:~/.config/rofi/scripts/paste-modi.sh" -show paste -theme ~/.config/rofi/clipboard.rasi -no-fixed-num-lines
+
+# File search
+bindsym $mod+f exec ~/.config/rofi/scripts/rofi-files.py
+
+# Audio Control
+bindsym Control+Mod1+a exec pavucontrol
 
 ###########################################################
 ###################### APPEARANCE #########################
@@ -156,7 +154,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym Shift+$mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -304,5 +302,5 @@ bindsym $mod+r mode "resize"
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Gpick"] floating enable
-
+for_window [class="gl"] floating enable
 

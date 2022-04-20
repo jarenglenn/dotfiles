@@ -1,0 +1,25 @@
+@import "base"
+
+* {
+  highlight: @green;
+  bold-highlight: @bold-breen;
+}
+
+window {
+  width: 550px;
+}
+
+textbox {
+  str: " Applications ";
+}
+
+listview {
+  lines: 5;
+}
+
+element {
+  children: [ element-icon, element-text  ];
+  orientation: horizontal;
+}
+
+

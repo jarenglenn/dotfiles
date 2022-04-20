@@ -1,56 +1,146 @@
+// Colors
+
 * {
-	backgroundc: #282a36;
-	highlight: #6272a5;
-	text: #333;
+    foreground: #f8f8f2;
+    background: #282a36;
+    current: #44475a;
+    foreground: #f8f8f2;
+    comment: #6272a4;
+
+    cyan: #8be9fd;
+    green: #50fa7b;
+    orange: #ffb86c;
+    pink: #ff79c6;
+    purple: #bd93f9;
+    red: #ff5555;
+    yellow: #f1fa8c;
+
+    bold-cyan: bold #8be9fd;
+    bold-green: bold #50fa7b;
+    bold-orange: bold #ffb86c;
+    bold-pink: bold #ff79c6;
+    bold-purple: bold #bd93f9;
+    bold-red: bold #ff5555;
+    bold-yellow: bold #f1fa8c;
 }
 
+// Set Default Highlight
+
+* {
+  highlight: @purple;
+  bold-highlight: @bold-purple;
+}
+
+// Setup
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+configuration {
+  show-icons: false;
+  font: "Fira Code 15";
+  sidebar-mode: true;
+}
+
+// Styles
 
 window {
-  background-color: @backgroundc;
-  border-radius: 10px;
-  border: 3;
+  location: center;
+  transparency: "real";
   width: 1000px;
-  height: 600px;
-  text-color: var(text);
+  border: 2px;
+  border-radius: 12px;
+  border-color: @comment;
+  background-color: @background;
+  text-color: @foreground;
+  blink: true;
 }
 
 mainbox {
-	background-color: inherit;	
+  children: [ inputbar, listview ];
+  background-color: @background;
+  spacing: 12px;
+  margin: 12px;
 }
 
 listview {
-	background-color: inherit;	
+  spacing: 10px;
+  background-color: @background;
+  columns: 1;
+  lines: 5;
+  cycle: true;
+  layout: vertical;
 }
 
 element {
-	color: white;
-	background-color: var(backgroundc);	
+	orientation: vertical;
 	padding: 10px;
-	orientation: horizontal;
+  border: 2px;
+  border-radius: 12px;
+  border-color: @current;
+	text-color: @foreground;
+	background-color: @background;
 }
 
 element-icon {
-	size: 35px;
+	background-color: @background;
+  text-color: @foreground;
+  padding: 12px;
+  margin: 0px;
+  border: 0px;
+  size: 1.5em;
 }
 
-element.selected {
-	background-color: var(highlight);
+element selected, element-icon selected {
+  background-color: @current;
 }
 
 inputbar {
+  children: [ textbox, entry ];
   spacing: 0px;
-  border: 0;
-  text-color: var(normal-foreground);
-  children: [ entry ];
-  border-radis: 10;
-  background-color: var(backgroundc);
+  background-color: @background;
+  text-color: @foreground;
+  expand: false;
+  border: 0px;
+  border-radius: 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
 }
 
 entry {
-	background-color: white;
-	border: 0;
-	border-color: white;
-	padding: 5 10;
-	border-radius: 10 10 0 0;
-	text-color: #333;
+	expand: true;
+	placeholder: "Search";
+	placeholder-color: @comment;
+	background-color: @current;
+	text-color: @foreground;
+	border-radius: 0px 10px 10px 0px;
+	blink: true;
+	padding: 10px;
+}
+
+element selected {
+  border-color: @comment;
+  text-color: @foreground;
+  border: 2px;
+  border-radius: 12px;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  expand: true;
+  vertical-align: 0.5;
+  highlight: @bold-highlight;
+}
+
+textbox {
+	expand: false;
+	str: " Menu ";
+	background-color: @highlight;
+	text-color: @background;
+	padding: 10px 10px 0px 10px;
+	border-radius: 10px 0px 0px 10px;
+	padding: 10px;
 }

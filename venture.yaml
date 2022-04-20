@@ -1,5 +1,6 @@
 args:
   theme: ~/.config/rofi/venture.rasi
+  no-fixed-num-lines: false
 browse:
   entries:
   - base: /home/jaren/development

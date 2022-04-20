@@ -1,0 +1,23 @@
+@import "base"
+
+* {
+	highlight: @pink;
+	bold-highlight: @bold-pink;
+}
+
+textbox {
+  str: " Clipboard ";
+}
+
+listview {
+  spacing: 20px;
+  lines: 5;
+}
+
+element {
+  border-color: @current;
+}
+
+element-text {
+  margin: 19px 15px 19px 15px;
+}

@@ -1,22 +1,22 @@
 @import "base"
 
+* {
+	highlight: @orange;
+	bold-highlight: @bold-orange;
+}
+
 window {
-	location: west;
-	width: 20%;
-	height: 100%;
-	border-radius: 0px;
+  width: 650px;
 }
 
-entry {
-	border-radius: 0px;
+textbox {
+	str: " Projects ";
 }
 
-element.selected {
-	color: white;
+listview {
+	lines: 10;
 }
 
-entry {
-	background-color: transparent;
-	border-radius: 0px;
-	color: #fff;
+listview {
+  spacing: 5px;
 }
