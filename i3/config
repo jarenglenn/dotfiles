@@ -12,11 +12,8 @@ font pango:DejaVu Sans Mono for Powerline 15
 # Setup displays
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-# Start Network Manager
-exec --no-startup-id nm-applet
-
 # Start the compositor
-exec --no-startup-id picom -b --backend glx
+exec --no-startup-id picom --daemon  --backend glx
 
 # Star the authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -34,7 +31,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xset s off dpms 600 600 600
 
 # Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+exec --no-startup-id deadd-notification-center
 
 # Clipboard manager
 exec --no-startup-id greenclip daemon
@@ -43,6 +40,12 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id polybar barleft --config=~/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar.log & disown
 exec --no-startup-id polybar barright --config=~/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar.log & disown
 
+set $gnome-schema org.gnome.desktop.interface
+exec gsettings set $gnome-schema gtk-theme 'Dracula'
+exec gsettings set $gnome-schema icon-theme 'Numix-Circle'
+exec gsettings set $gnome-schema cursor-theme 'Breeze-Snow'
+exec gsettings set $gnome-schema font-name 'Firacode'
+
 ###########################################################
 ###################### APPLICATIONS #######################
 ###########################################################
@@ -50,13 +53,6 @@ exec --no-startup-id polybar barright --config=~/.config/polybar/config.ini 2>&1
 # Start a terminal
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec alacritty --working-directory `xcwd`
-
-# Start Browser
-bindsym Mod1+b exec microsoft-edge-beta
-bindsym Ctrl+Mod1+b exec "killall microsoft-edge-beta && microsoft-edge-beta"
-
-# Start VSCode
-bindsym Mod1+v exec code
 
 # Screenshots
 bindsym Print exec gnome-screenshot -i
@@ -68,7 +64,8 @@ bindsym $mod+x exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launch
 bindsym Control+Mod1+p exec ~/.config/rofi/powermenu/powermenu.sh
 
 # Project Menu
-bindsym $mod+Shift+a exec ~/.local/bin/venture run
+bindsym Control+Mod1+j exec "/home/jaren/.local/bin/venture run"
+bindsym Control+Mod1+k exec "/home/jaren/.local/bin/venture quicklaunch"
 
 # Clipboard manager
 bindsym $mod+c exec --no-startup-id rofi -modi "paste:~/.config/rofi/scripts/paste-modi.sh" -show paste -theme ~/.config/rofi/clipboard.rasi -no-fixed-num-lines
@@ -78,6 +75,10 @@ bindsym $mod+f exec ~/.config/rofi/scripts/rofi-files.py
 
 # Audio Control
 bindsym Control+Mod1+a exec pavucontrol
+
+# Notification center
+bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
+bindsym $mod+Shift+n exec --no-startup-id notify-send.py a --hint boolean:deadd-notification-center:true \ string:type:clearInCenter
 
 ###########################################################
 ###################### APPEARANCE #########################
@@ -126,26 +127,17 @@ bindsym $mod+";" exec "multilockscreen -l blur --off 300 --display 1"
 bindsym $mod+Shift+r restart
 
 # Change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
-bindsym $mod+l focus right
+set $mf /home/jaren/.local/bin/magic_focus
+bindsym $mod+Left exec $mf left
+bindsym $mod+Down exec $mf down
+bindsym $mod+Up exec $mf up
+bindsym $mod+Right exec $mf right
 
 # Move Windows
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -171,10 +163,8 @@ bindsym $mod+space focus mode_toggle
 bindsym Mod1+Tab workspace back_and_forth
 
 # focus the parent container
-bindsym $mod+a focus parent
-
-# open new empty workspace
-bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace.sh
+bindsym $mod+a focus parentnotify-send.py a --hint boolean:deadd-notification-center:true \
+               string:type:clearInCenter
 
 # Resize and center a windor (for single screen on ultrawide)
 bindsym $mod+y floating enable; resize set 2231 px 1366 px; move position 1458 734
@@ -256,7 +246,7 @@ bindsym $mod+Control+Left move workspace to output left
 
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $wst
-assign [class="Microsoft-edge-beta"] $wsb
+assign [class="Microsoft-edge"] $wsb
 # assign [class="Code"] $wsp
 assign [class="discord"] $wsd
 assign [class="zoom"] $wsd
@@ -265,7 +255,7 @@ for_window [class="Spotify"] move to workspace $wsm
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class="Alacritty"] focus
-for_window [class="Microsoft-edge-beta"] focus
+for_window [class="Microsoft-edge"] focus
 for_window [class="Code"] focus
 for_window [class="discord"] focus
 for_window [class="Spotify"] focus

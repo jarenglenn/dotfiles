@@ -1,16 +1,7 @@
-set PATH \
-    /home/jaren/.local/bin \
-    /home/jaren/.gem/ruby/3.0.0/bin \
-    /home/jaren/.poetry/binm/ \
-    $PATH
+set PATH /home/jaren/.local/bin $PATH
      
 # Removes fish greeting 
 set fish_greeting
-
-# Disable venv for powerline replacement
-set VIRTUAL_ENV_DISABLE_PROMPT disable
-
-source /opt/asdf-vm/asdf.fish
 
 #  Functions
 
@@ -81,15 +72,14 @@ abbr -a gtd "git log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
 # list stats for the repo
 abbr -a grs "git shortlog -s -n --all --no-merges"
 # open current repo and branch in Edge
-abbr -a gop "microsoft-edge-beta (repo-url)"
+abbr -a gop "microsoft-edge-stable (repo-url)"
 
 # Misc
+alias yeet='yay -Rcs'
 alias la="exa -la --icons"
 abbr be "bundle exec"
 abbr pr "poetry run"
 
-
-
-
 direnv hook fish | source
 starship init fish | source
+source /opt/asdf-vm/asdf.fish

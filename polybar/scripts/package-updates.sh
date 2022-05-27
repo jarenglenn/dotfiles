@@ -11,7 +11,7 @@ if ! updates_arch="$(checkupdates | wc -l)"; then
     updates_arch=0
 fi
 
-if ! updates_aur="$(paru -Qum | wc -l)"; then
+if ! updates_aur="$(yay -Qum | wc -l)"; then
     updates_aur=0
 fi
 

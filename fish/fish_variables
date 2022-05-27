@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BROWSER:microsoft\x2dedge
 SETUVAR --export EDITOR:micro
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
 SETUVAR FZF_DISABLE_KEYBINDINGS:0
@@ -31,7 +32,7 @@ SETUVAR _fish_abbr_gl:git\x20log\x20\x2d\x2dpretty\x3dformat\x3a\x22\x25Cgreen\x
 SETUVAR _fish_abbr_gl2:git\x20log\x20\x2d\x2dpretty\x3d\x27format\x3a\x25Cgreen\x25h\x25Creset\x20\x25an\x20\x2d\x20\x25s\x27\x20\x2d\x2dgraph
 SETUVAR _fish_abbr_glv:git\x20log\x20\x2d\x2dstat
 SETUVAR _fish_abbr_gm:git\x20merge\x20\x2d\x2dno\x2dff
-SETUVAR _fish_abbr_gop:microsoft\x2dedge\x2dbeta\x20\x28repo\x2durl\x29
+SETUVAR _fish_abbr_gop:microsoft\x2dedge\x2dstable\x20\x28repo\x2durl\x29
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpod:git\x20push\x20origin\x20\x2d\x2ddelete
 SETUVAR _fish_abbr_gpom:git\x20pull\x20origin\x20master

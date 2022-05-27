@@ -6,7 +6,7 @@ browse:
   - base: /home/jaren/development
     subs:
     - work
-    - personal/*
+    - personal
     - school/*
   exec: ''
   include_parent_folder: false
