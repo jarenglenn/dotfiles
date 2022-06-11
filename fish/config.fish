@@ -72,10 +72,11 @@ abbr -a gtd "git log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
 # list stats for the repo
 abbr -a grs "git shortlog -s -n --all --no-merges"
 # open current repo and branch in Edge
-abbr -a gop "microsoft-edge-stable (repo-url)"
+abbr -a gop "brave (repo-url)"
 
 # Misc
 alias yeet='yay -Rcs'
+alias fuckpicom='killall picom; picom --daemon'
 alias la="exa -la --icons"
 abbr be "bundle exec"
 abbr pr "poetry run"
