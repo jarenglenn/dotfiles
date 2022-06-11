@@ -27,11 +27,12 @@ exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 # set wallpaper
 exec --no-startup-id nitrogen --restore
 
-#set powersavings for display:
-exec --no-startup-id xset s off dpms 600 600 600
+# Dim the screen after 3 minutes of inactivity and lock after 2 more
+exec --no-startup-id xset s 180 120
+exec --no-startup-id xss-lock -n ~/.config/i3/scripts/dim-screen.sh -- systemctl suspend
 
 # Desktop notifications
-exec --no-startup-id deadd-notification-center
+exec --no-startup-id dbus-launch dunst --config ~/.config/dunqst/dunstrc
 
 # Clipboard manager
 exec --no-startup-id greenclip daemon
@@ -54,8 +55,21 @@ exec gsettings set $gnome-schema font-name 'Firacode'
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec alacritty --working-directory `xcwd`
 
+# Lock the screen
+bindsym Control+Mod1+l exec betterlockscreen -l blur --display 1
+
+# Suspend system
+bindsym Control+Mod1+s exec systemctl suspend
+
 # Screenshots
-bindsym Print exec gnome-screenshot -i
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Application Menu
 bindsym $mod+x exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launcher.rasi -drun-display-format {name} -no-fixed-num-lines
@@ -75,10 +89,6 @@ bindsym $mod+f exec ~/.config/rofi/scripts/rofi-files.py
 
 # Audio Control
 bindsym Control+Mod1+a exec pavucontrol
-
-# Notification center
-bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
-bindsym $mod+Shift+n exec --no-startup-id notify-send.py a --hint boolean:deadd-notification-center:true \ string:type:clearInCenter
 
 ###########################################################
 ###################### APPEARANCE #########################
@@ -159,12 +169,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# Scroll through worksapces
-bindsym Mod1+Tab workspace back_and_forth
 
 # focus the parent container
-bindsym $mod+a focus parentnotify-send.py a --hint boolean:deadd-notification-center:true \
-               string:type:clearInCenter
+bindsym $mod+a focus parent
 
 # Resize and center a windor (for single screen on ultrawide)
 bindsym $mod+y floating enable; resize set 2231 px 1366 px; move position 1458 734
@@ -246,7 +253,9 @@ bindsym $mod+Control+Left move workspace to output left
 
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $wst
-assign [class="Microsoft-edge"] $wsb
+assign [class="brave-browser"] $wsb
+assign [class="Code"] $wsb
+assign [class="Blender"] $wsb
 # assign [class="Code"] $wsp
 assign [class="discord"] $wsd
 assign [class="zoom"] $wsd
@@ -255,7 +264,8 @@ for_window [class="Spotify"] move to workspace $wsm
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class="Alacritty"] focus
-for_window [class="Microsoft-edge"] focus
+for_window [class="brave-browser"] focus
+for_window [class="Blender"] focus
 for_window [class="Code"] focus
 for_window [class="discord"] focus
 for_window [class="Spotify"] focus
@@ -290,7 +300,10 @@ bindsym $mod+r mode "resize"
 
 #set floating (nontiling) for special apps
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="gl"] floating enable
+for_window [class="File-roller"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [title="Blender Preferences"] floating enable
+for_window [title="Blender Render"] floating enable
 
