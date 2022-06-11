@@ -1,5 +1,6 @@
 configuration {
   show-icons: false;
+  icon-theme: "Numix-Circle";
   font: "Fira Code 15";
   sidebar-mode: false;
   yoffset: 435;
