@@ -64,7 +64,7 @@ bindsym Control+Mod1+s exec systemctl suspend
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -253,7 +253,7 @@ bindsym $mod+Control+Left move workspace to output left
 
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $wst
-assign [class="brave-browser"] $wsb
+assign [class="Brave-browser"] $wsb
 assign [class="Code"] $wsb
 assign [class="Blender"] $wsb
 # assign [class="Code"] $wsp
@@ -264,7 +264,7 @@ for_window [class="Spotify"] move to workspace $wsm
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class="Alacritty"] focus
-for_window [class="brave-browser"] focus
+for_window [class="Brave-browser"] focus
 for_window [class="Blender"] focus
 for_window [class="Code"] focus
 for_window [class="discord"] focus
