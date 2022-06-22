@@ -6,7 +6,6 @@ browse:
   - base: /home/jaren/development
     subs:
     - work
-    - work/php_dev
     - personal
     - school/*
   exec: ''

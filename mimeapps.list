@@ -1,4 +1,3 @@
-
 [Default Applications]
 text/html=brave.desktop
 application/pdf=brave.desktop
@@ -7,3 +6,6 @@ application/xhtml+xml=brave.desktop
 x-scheme-handler/https=brave.desktop
 x-scheme-handler/http=brave.desktop
 x-scheme-handler/mailto=brave.desktop
+
+[Added Associations]
+application/x-php=visual-studio-code.desktop;

@@ -258,6 +258,7 @@ assign [class="Code"] $wsb
 assign [class="Blender"] $wsb
 # assign [class="Code"] $wsp
 assign [class="discord"] $wsd
+assign [class="Slack"] $wsd
 assign [class="zoom"] $wsd
 for_window [class="Spotify"] move to workspace $wsm
 
@@ -270,6 +271,7 @@ for_window [class="Code"] focus
 for_window [class="discord"] focus
 for_window [class="Spotify"] focus
 for_window [class="zoom"] focus
+for_window [class="Slack"] focus
 
 
 ###########################################################
@@ -306,4 +308,4 @@ for_window [class="File-roller"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [title="Blender Preferences"] floating enable
 for_window [title="Blender Render"] floating enable
-
+for_window [title="^zoom $" class="[zoom]*"] floating enable
