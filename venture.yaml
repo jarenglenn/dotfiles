@@ -24,18 +24,19 @@ quicklaunch:
       path: ~/development/personal/python/acli/
       tags:
       - '|py|'
-    Pi Database:
-      icon: "\uF81F"
-      path: ~/development/work/piserver/
+    USU OPTT Forms:
+      icon: "|tsx|"
+      path: ~/development/work/usu-optt-forms/
       tags:
-      - '|py|'
-      - '|jsx|'
-    Special Forms:
-      icon: "\uE23E"
-      path: ~/development/work/specialforms/
+      - '|tsx|'
+      - '|ts|'
+    i3:
+      icon: "\uF192"
+      path: ~/.config/i3/config
       tags:
-      - '|py|'
-      - '|jsx|'
+        - "|config|"
+      
+    
   exec: ''
   show_filepath: false
 ui: rofi

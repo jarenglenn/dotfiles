@@ -60,6 +60,7 @@ abbr -a gsu "git status -uno"
 # commit -m
 abbr -a gcm "git commit -m"
 abbr -a gcv "git commit --verbose"
+abbr -a gcn "git commit --amend --no-edit"
 abbr -a gc "git commit --verbose"
 # diff in sublime
 abbr -a gds "git diff | sublime"
@@ -84,3 +85,4 @@ abbr pr "poetry run"
 direnv hook fish | source
 starship init fish | source
 source /opt/asdf-vm/asdf.fish
+source /usr/share/autojump/autojump.fish

@@ -7,7 +7,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # Font for window titles
-font pango:DejaVu Sans Mono for Powerline 15
+font pango:Fira Code SemiBold 11
 
 # Setup displays
 exec --no-startup-id ~/.screenlayout/monitor.sh
@@ -28,7 +28,7 @@ exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id nitrogen --restore
 
 # Dim the screen after 3 minutes of inactivity and lock after 2 more
-exec --no-startup-id xset s 180 120
+exec --no-startup-id xset s 180 720
 exec --no-startup-id xss-lock -n ~/.config/i3/scripts/dim-screen.sh -- systemctl suspend
 
 # Desktop notifications
@@ -95,15 +95,18 @@ bindsym Control+Mod1+a exec pavucontrol
 ###########################################################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 3
 
 # define colors for windows:
 #class                      border         bground        text		indicator	child_border
-client.focused              #6272A4        #6272A4        #F8F8F2   #6272A4     #6272A4
+client.focused              #ff79c6        #ff79c6        #282a36   #ff79c6     #ff79c6
 client.focused_inactive     #44475a        #44475A        #F8F8F2   #44475A     #44475A
 client.unfocused            #282A36        #282A36        #BFBFBF   #282A36     #282A36
 client.urgent               #44475A        #FF5555        #F8F8F2   #FF5555     #FF5555
 client.placeholder          #282A36        #282A36        #F8F8F2   #282A36     #282A36
+
+# Padding around title  bars
+for_window [class=".*"] title_format " %title"
 
 
 ###########################################################
@@ -128,7 +131,7 @@ bindsym $mod+q kill
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+";" exec "multilockscreen -l blur --off 300 --display 1"
+bindsym $mod+";" exec "multilockscreen -l blur --off 900 --display 1"
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload

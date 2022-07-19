@@ -20,6 +20,7 @@ SETUVAR _fish_abbr_gca:git\x20commit\x20\x2da\x20\x2dm
 SETUVAR _fish_abbr_gcd:cd\x20\x22\x60git\x20rev\x2dparse\x20\x2d\x2dshow\x2dtoplevel\x60\x22
 SETUVAR _fish_abbr_gcf:git\x20clean\x20\x2dfd
 SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gcn:git\x20commit\x20\x2d\x2damend\x20\x2d\x2dno\x2dedit
 SETUVAR _fish_abbr_gco:git\x20checkout
 SETUVAR _fish_abbr_gcob:git\x20checkout\x20\x2db
 SETUVAR _fish_abbr_gcod:git\x20checkout\x20\x2d\x2d\x20\x2e

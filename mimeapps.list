@@ -6,6 +6,9 @@ application/xhtml+xml=brave.desktop
 x-scheme-handler/https=brave.desktop
 x-scheme-handler/http=brave.desktop
 x-scheme-handler/mailto=brave.desktop
+x-scheme-handler/etcher=balena-etcher-electron.desktop
 
 [Added Associations]
 application/x-php=visual-studio-code.desktop;
+text/plain=visual-studio-code.desktop;
+text/html=visual-studio-code.desktop;
